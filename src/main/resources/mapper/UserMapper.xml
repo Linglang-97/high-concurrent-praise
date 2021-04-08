@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace要求使用dao接口的全限定名称 -->
+<mapper namespace="cn.zheng.dao.UserDao">
+    <resultMap id="userMap" type="cn.zheng.model.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="account" column="account"/>
+    </resultMap>
+    <sql id="table_column">
+        id,
+        name,
+        account
+    </sql>
+    <select id="find" resultMap="userMap">
+        SELECT
+        <include refid="table_column"/>
+        FROM user
+        <where>
+            id = #{id}
+        </where>
+    </select>
+</mapper>
+
