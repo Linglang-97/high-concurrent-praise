@@ -68,7 +68,7 @@ mood.jsp
 PraiseDataSaveDBJob:
     1.取出Redis缓存中所有被点赞的说说id
     2.从Redis缓存中通过说说id获取所有点赞的用户id列表
-    3.step3:循环保存mood_id和user_id的关联关系到MySQL数据库
+    3.循环保存mood_id和user_id的关联关系到MySQL数据库
     4.更新说说点赞数量:说说的总点赞数量=Redis点赞数量+数据库的点赞数量
 
 mq类：

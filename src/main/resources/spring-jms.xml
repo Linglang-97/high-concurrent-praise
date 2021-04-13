@@ -29,8 +29,7 @@
 
     <!-- 消息消费者 start -->
     <!-- 定义Queue监听器 -->
-    <jms:listener-container destination-type="queue" container-type="default"
-                            connection-factory="connectionFactory" acknowledge="auto">
+    <jms:listener-container>
         <!-- 可写多个监听器 -->
         <jms:listener destination="zheng.queue.high.concurrency.praise" ref="moodConsumer"/>
     </jms:listener-container>
